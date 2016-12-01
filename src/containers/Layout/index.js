@@ -3,6 +3,8 @@ import { Layout, Panel, Sidebar, IconButton } from 'react-toolbox'
 import Map from '../Map'
 
 import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
 export default class App extends Component {
   componentWillMount() {
