@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Layout, Panel, Sidebar, IconButton } from 'react-toolbox'
-import Map from './containers/Map'
+import Map from '../Map'
 
 import 'leaflet/dist/leaflet.css'
 
