@@ -5,6 +5,26 @@ import 'leaflet.markercluster'
 
 import fakeClusterData from './fakeClusterData'
 
+L.Icon.Default = L.Icon.Default.extend({
+  options: {
+     iconUrl: '/marker-icon.png',
+     iconSize: [25, 41],
+     iconAnchor: [15, 37],
+     popupAnchor: [0, -25],
+     shadowUrl: '/marker-icon.png',
+     shadowSize: [0, 0],
+     shadowAnchor: [0, 0]
+  }
+});
+
+L.Icon.Default.imagePath = '/resources';
+
+L.Marker = L.Marker.extend({
+  options: {
+     icon: new L.Icon.Default()
+  }
+});
+
 export default class Map extends Component {
   componentWillReceiveProps() {
     // update map objects here
