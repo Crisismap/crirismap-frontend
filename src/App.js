@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Layout, Panel, Sidebar, IconButton } from 'react-toolbox'
+import Map from './containers/Map'
+
+import 'leaflet/dist/leaflet.css'
 
 export default class App extends Component {
   componentWillMount() {
@@ -17,9 +20,7 @@ export default class App extends Component {
       <Layout>
         <Panel>
           <IconButton icon='menu' onClick={() => this.toggleSidebar()} />
-          <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem' }}>
-              <p>map goes here</p>
-          </div>
+          <Map />
         </Panel>
         <Sidebar pinned={ this.state.sidebarPinned } width={ 5 }>
           <div><IconButton icon='close' onClick={() => this.toggleSidebar()}/></div>
