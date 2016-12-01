@@ -16,6 +16,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel', query: { presets: ['es2015', 'react', 'stage-0'] }, exclude: /node_modules/ },
+      { test: /\.css$/, loader: extractCSSPlugin.extract(['css', 'postcss-loader']) },
       { test: /\.(scss|sass)$/, loader: extractCSSPlugin.extract(['css?modules&source-map', 'postcss-loader', 'sass?sourceMap']) },
       { test: /\.(png|svg|jpg|ttf|eot|woff|woff2)$/, loader: 'file' }
     ]
