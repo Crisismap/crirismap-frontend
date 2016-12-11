@@ -1,8 +1,6 @@
 # Crisismap front-end
 
-## Purpose
-
-(see https://github.com/Crisismap/crisismap-backend for generic scheme and explanation)
+(see https://github.com/Crisismap/crisismap-docs for generic scheme and explanation)
 
 ## Tech stack
 
