@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import { Layout, Panel, Sidebar, IconButton } from 'react-toolbox';
-import Map from '../Map';
 
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
+import Map from '../Map';
+
 export default class App extends Component {
   componentWillMount() {
     this.setState({
-      sidebarPinned: false,
+      sidebarPinned: false
     });
   }
 
   toggleSidebar() {
-    this.setState({ sidebarPinned: !this.state.sidebarPinned });
+    this.setState({
+      sidebarPinned: !this.state.sidebarPinned
+    });
   }
 
   render() {
@@ -24,8 +27,12 @@ export default class App extends Component {
           <IconButton icon="menu" onClick={() => this.toggleSidebar()} />
           <Map />
         </Panel>
+
         <Sidebar pinned={this.state.sidebarPinned} width={5}>
-          <div><IconButton icon="close" onClick={() => this.toggleSidebar()} /></div>
+          <div>
+            <IconButton icon="close" onClick={() => this.toggleSidebar()} />
+          </div>
+
           <div style={{ flex: 1 }}>
             <p>categories go here</p>
           </div>
