@@ -2,9 +2,12 @@
   "name": "crisismap-frontend",
   "version": "0.0.1",
   "description": "UX/UI module, a web client to Crisismap API",
-  "repository": "https://github.com/Crisismap/crisismap-frontend/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crisismap/crisismap-frontend.git"
+  },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack -d --progress",
     "watch": "webpack --watch --progress --colors",
     "lint": "eslint ./src/"
   },

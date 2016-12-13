@@ -4,5 +4,12 @@ module.exports = {
     "react",
     "jsx-a11y",
     "import"
-  ]
+  ],
+  "env": {
+    "browser": "true"
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "react/jsx-filename-extension": "off"
+  }
 }
