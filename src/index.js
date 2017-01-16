@@ -1,15 +1,11 @@
 // @flow
+import React from 'react';
+import { render } from 'react-dom';
 
-import React from 'react'
-import { render } from 'react-dom'
-import styles from './styles.sass'
-import Layout from './containers/Layout'
+import styles from './styles.sass';
+import Layout from './containers/Layout';
 
-window.addEventListener('load', function (ev) {
-  let el = document.createElement('div')
-  el.className = styles['root']
-  document.body.appendChild(el)
-  render(
-    <Layout />
-  , el)
-})
+const el = document.getElementById('app');
+
+el.className = styles['root'];
+render(<Layout />, el);

@@ -1,8 +1,8 @@
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-var autoprefixer = require('autoprefixer')
-var path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const path = require('path');
 
-var extractCSSPlugin = new ExtractTextWebpackPlugin('bundle.css')
+const extractCSSPlugin = new ExtractTextWebpackPlugin('bundle.css');
 
 module.exports = {
   entry: path.join(__dirname, 'src/index.js'),
@@ -14,6 +14,9 @@ module.exports = {
   },
 
   module: {
+    preLoaders: [
+      { test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ }
+    ],
     loaders: [
       { test: /\.js$/, loader: 'babel', query: { presets: ['es2015', 'react', 'stage-0'] }, exclude: /node_modules/ },
       { test: /\.css$/, loader: extractCSSPlugin.extract(['css', 'postcss-loader']) },
@@ -30,7 +33,7 @@ module.exports = {
     extractCSSPlugin
   ],
 
-  postcss: () => [ autoprefixer ],
+  postcss: () => [autoprefixer],
 
   devtool: 'source-map'
-}
+};
